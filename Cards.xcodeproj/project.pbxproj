@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		CBEA9C327D0A1CA6A02490CE /* Pods_Cards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEFBD60F7DC07F100321EA16 /* Pods_Cards.framework */; };
 		FA0ECCA721ADDFC00075D0AC /* CardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0ECCA621ADDFC00075D0AC /* CardSearchViewController.swift */; };
-		FA0ECCA921AF2E060075D0AC /* Scryfall.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0ECCA821AF2E060075D0AC /* Scryfall.swift */; };
+		FA0ECCA921AF2E060075D0AC /* Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0ECCA821AF2E060075D0AC /* Magic.swift */; };
 		FA0ECCAB21AF372F0075D0AC /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0ECCAA21AF372F0075D0AC /* CardEntity.swift */; };
 		FA0ECCAD21AF38890075D0AC /* CardTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0ECCAC21AF38890075D0AC /* CardTrackerModel.swift */; };
 		FA0ECCB021B082900075D0AC /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0ECCAF21B082900075D0AC /* CardCell.swift */; };
@@ -23,7 +23,7 @@
 		1213FD95FEFCC53EA1C5723E /* Pods-Cards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cards.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cards/Pods-Cards.debug.xcconfig"; sourceTree = "<group>"; };
 		AEFBD60F7DC07F100321EA16 /* Pods_Cards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0ECCA621ADDFC00075D0AC /* CardSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchViewController.swift; sourceTree = "<group>"; };
-		FA0ECCA821AF2E060075D0AC /* Scryfall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scryfall.swift; sourceTree = "<group>"; };
+		FA0ECCA821AF2E060075D0AC /* Magic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magic.swift; sourceTree = "<group>"; };
 		FA0ECCAA21AF372F0075D0AC /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
 		FA0ECCAC21AF38890075D0AC /* CardTrackerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTrackerModel.swift; sourceTree = "<group>"; };
 		FA0ECCAF21B082900075D0AC /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		FA0ECCB221B092070075D0AC /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				FA0ECCA821AF2E060075D0AC /* Scryfall.swift */,
+				FA0ECCA821AF2E060075D0AC /* Magic.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -144,7 +144,6 @@
 				FAE0960421ADD35D005D70E8 /* Frameworks */,
 				FAE0960521ADD35D005D70E8 /* Resources */,
 				F0CCA0727D43CB0E69C92EDB /* [CP] Embed Pods Frameworks */,
-				128AD2408866D288EF2BAB5C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,21 +201,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		128AD2408866D288EF2BAB5C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cards/Pods-Cards-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		AA53FE4CA40DE2880F68D3AD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,35 +224,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Cards/Pods-Cards-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya-ModelMapper/Moya_ModelMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cards/Pods-Cards-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ModelMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cards/Pods-Cards-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cards/Pods-Cards-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cards/Pods-Cards-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -279,7 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0ECCA721ADDFC00075D0AC /* CardSearchViewController.swift in Sources */,
-				FA0ECCA921AF2E060075D0AC /* Scryfall.swift in Sources */,
+				FA0ECCA921AF2E060075D0AC /* Magic.swift in Sources */,
 				FA0ECCAB21AF372F0075D0AC /* CardEntity.swift in Sources */,
 				FAE0960B21ADD35E005D70E8 /* AppDelegate.swift in Sources */,
 				FA0ECCAD21AF38890075D0AC /* CardTrackerModel.swift in Sources */,

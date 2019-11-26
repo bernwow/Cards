@@ -14,8 +14,8 @@ import RxSwift
 import SDWebImage
 
 class CardSearchViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var searchBar: UISearchBar!
     var cardTrackerModel: CardTrackerModel!
     var latestCardName: Observable<String> {
         return searchBar

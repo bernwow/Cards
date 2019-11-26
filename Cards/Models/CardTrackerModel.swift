@@ -15,7 +15,7 @@ import RxSwift
 
 struct CardTrackerModel {
     
-    let provider: MoyaProvider<Scryfall>
+    let provider: MoyaProvider<Magic>
     let cardName: Observable<String>
     
     func trackCards() -> Observable<[Card]?> {
@@ -30,7 +30,7 @@ struct CardTrackerModel {
     
     internal func findCard(_ name: String) -> Observable<[Card]?> {
         return self.provider.rx
-            .request(Scryfall.cards(cardName: name))
+            .request(Magic.cards(cardName: name))
             .debug()
             .mapOptional(to: [Card].self, keyPath: "data")
             .asObservable()
